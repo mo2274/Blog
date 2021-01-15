@@ -1,0 +1,25 @@
+{% load bootstrap4 %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Random Thoughts</title>
+
+    {% bootstrap_css %}
+    {% bootstrap_javascript jquery='full' %}
+</head>
+<body>
+    <a href="{% url 'blogpost:index' %}">Random Thoughts</a>
+    <a href="{% url 'blogpost:posts' %}"> - Posts </a>
+    {% if user.is_authenticated %}
+        <a href="{% url 'users:logout' %}"> - Logout </a>
+        <p>Hello, {{user.username}} </p>
+    {% else %}
+        <a href="{% url 'users:register' %}"> - Sign up</a>
+        <a href="{% url 'users:login' %}"> - Login</a>
+    {% endif %}
+    {% block content %} {% endblock content%}
+
+</body>
+</html>

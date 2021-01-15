@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+    {% extends 'blogpost/base.html' %}
+    {% block content %}
+    <form action="{% url 'users:register' %}" method='POST'>
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button name="submit"> register </button>
+    </form>
+    {% endblock content %} 
+</body>
+</html>
