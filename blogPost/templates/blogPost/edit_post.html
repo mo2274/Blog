@@ -2,11 +2,19 @@
 <html lang="en">
 <body>
     {% extends 'blogpost/base.html'%}
+    {% load bootstrap4 %}
+
+    {% block page_header %}
+        <h2>Edit the post.</h2>
+    {% endblock page_header %}
+
     {% block content %}
-        <form action="{% url 'blogpost:edit_post' post.id %}" method="post">
+        <form class="form" action="{% url 'blogpost:edit_post' post.id %}" method="post">
             {% csrf_token %}
-            {{ form.as_p }}
-            <button name="submit"> Save changes </button>
+            {% bootstrap_form form %}
+            {% buttons %}
+                <button name="submit" class="btn btn-primary">Save changes</button>
+            {% endbuttons %}
         </form>
     {% endblock content %}
     

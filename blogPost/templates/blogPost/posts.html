@@ -2,22 +2,46 @@
 <html lang="en">
 <body>
     {% extends 'blogpost/base.html'%}
+
+    {% block page_header %}
+        <h1>Posts</h1>
+    {% endblock page_header %}
+
     {% block content %}
         <p> <a href="{% url 'blogpost:new_post' %}">Add new post</a> </p>
-        <ul>
-            {% for post in posts %}
-                <li>
-                    <p>{{ post.date_added|date:'M d, Y H:i'}}</p>
-                    <p>{{ post.title|linebreaks }}</p>
-                    <p>{{ post.text|linebreaks }}</p>
-                    <a href="{% url 'blogpost:post' post.id %}">View post</a>
-                    <a href="{% url 'blogpost:edit_post' post.id %}"> - Edit post</a>
-                    <a href="{% url 'blogpost:delete_post' post.id %}"> - Delete post</a>
-                </li>
+       
+        {% for post in posts %}
+            <div class="card mb-3 mt-3 ">
+                <h4 class="card-header">
+                    {{ post.title|linebreaks }}
+                </h4>
+                <div class="card-body">
+                    {{ post.text|linebreaks }}
+                </div>
+            </div>  
+            <h6>
+                <h6>
+                    {{ post.date_added|date:'M d, Y H:i'}}
+                </h6>
+                <small>
+                    <a class="btn btn-sm btn-primary" role="button" href="{% url 'blogpost:post' post.id %}">
+                        View post
+                    </a>
+                </small>
+                <small>
+                    <a class="btn btn-sm btn-primary" role="button" href="{% url 'blogpost:edit_post' post.id %}">
+                        Edit post
+                    </a>
+                </small>
+                <small>
+                    <a class="btn btn-sm btn-primary" role="button" href="{% url 'blogpost:delete_post' post.id %}">
+                        Delete post
+                    </a>
+                </small>
+            </h6>
             {% empty %}
-                <p>no blog posts yet</p>
+                <p>No blog posts yet</p>
             {% endfor %}
-        </ul>
 
     {% endblock content %}
 </body>

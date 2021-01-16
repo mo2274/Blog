@@ -12,8 +12,8 @@ def check_post_owener(request, post):
 
 def post_view(posts):
     for post in posts:
-        if len(post.text) > 50:
-            post.text = post.text[:50] + '...'
+        if len(post.text) > 200:
+            post.text = post.text[:200] + ' .....'
 
 
 def index(request):

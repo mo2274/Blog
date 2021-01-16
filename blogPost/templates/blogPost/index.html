@@ -2,8 +2,18 @@
 <html lang="en">
 <body>
     {% extends 'blogpost/base.html'%}
-    {% block content %}
-        <p>Share your Thoughts with other people</p>
-    {% endblock content %}
+
+    {% block page_header %}
+        <div class="jumbotron">
+            <h1 class="display-3">Save your Thoughts.</h1>
+            <p class="lead">
+                Save your experiences and thoughts by writing it here.
+                and document what you are learning right now.
+            </p>
+            <a class="btn btn-lg btn-primary" href="{% url 'users:register' %}" role="button">
+                Register &raquo;
+            </a>
+        </div>
+    {% endblock page_header %}
 </body>
 </html>
