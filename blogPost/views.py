@@ -5,6 +5,8 @@ from django.http import Http404
 from .models import BlogPost
 from .forms import PostForm
 
+template_name = "blogPost/index.html"
+
 def check_post_owener(request, post):
     if request.user != post.user:
         raise Http404
