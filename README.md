@@ -1,11 +1,10 @@
-# learning log:
+# Random Thoughts:
 
-This web app called Learning Log that allows users to
-log the topics they’re interested in and to make journal entries as
-they learn about each topic. The Learning Log home page will
-describe the site and invite users to either register or log in. Once
-logged in, a user can create new topics, add new entries, and read
-and edit existing entries.
+This web app called Random Thoughts that allows users to
+write about the things they thinking about or the things they are currentlly learning.
+The home page will describe the site and invite users to either register or log in. Once
+logged in, a user can create new posts, and read
+and edit existing posts.
 
 
 ### Installing Dependencies
@@ -18,7 +17,7 @@ We recommend working within a virtual environment whenever using Python for proj
 
 #### PIP Dependencies
 
-Once you have your virtual environment setup and running, install dependencies by naviging to the `/learning log` directory and running:
+Once you have your virtual environment setup and running, install dependencies by naviging to the `/blog` directory and running:
 
 ```bash
 pip install -r requirements.txt
@@ -26,7 +25,7 @@ pip install -r requirements.txt
 
 ## Running the server
 
-From within the `/learning log` directory first ensure you are working using your created virtual environment.
+From within the `/blog` directory first ensure you are working using your created virtual environment.
 
 run:
 
